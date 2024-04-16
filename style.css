@@ -1,54 +1,270 @@
-body {
-    font-family: Arial, sans-serif;
+*{
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    padding: 10px 0;
+    background: #0c0d0d;
+    color: #fff;
+}
+
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(assets/background.png);
+    background-size: cover;
+    background-position: center;
+
+}
+
+.container{
+    padding: 10px 10%;
 }
 
 nav {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.about-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0c0d0d;
+    color: white;
+    padding: 10px 0;
+    z-index: 1000;
 }
 
-.about-photo img {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
+
+.logo{
+    width: 140px;
 }
 
-.project-categories {
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #e31751;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+
+}
+
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+
+}
+
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.header-text h1 span{
+    color: #e31751;
+}
+
+
+#about{
+    padding: 80px 0;
+    color: #b8b5ae;
+}
+
+.row{
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    flex-wrap: wrap;
 }
 
-.project-category {
-    width: 45%;
+.about-column-1{
+    flex-basis: 35%;
 }
 
-.contact {
-    padding: 20px;
-    text-align: center;
+.about-column-1 img{
+    width: 100%;
+    border-radius: 15px;
 }
+
+.about-column-2{
+    flex-basis: 60%;
+
+}
+
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #e31751;
+}
+
+.tab-title{
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #e31751;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+    width: 50%;
+}
+
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.tab-contents ul li span{
+    color: #bd4063;
+    font-weight: 200;
+}
+
+.tab-contents{
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display: block;
+}
+
+
+
+#projects{
+    padding: 30px 0;
+
+}
+
+.sub-title-description{
+    font-size: 27px;
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.project-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.project-list div{
+    background: #292829;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+
+.project-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+
+}
+
+.project-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+
+.project-list div a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.project-list div a i{
+    font-size: 15px;
+    margin-left: 2px;
+}
+
+.project-list div:hover{
+    background: #e31751;
+    transform: translateY(-10px);
+}
+
+
+#contact{
+    padding: 30px 0;
+}
+
+
+.contact-list p{
+    margin-top: 12px;
+    font-size: 17px;
+    font-weight: 100;
+}
+
+.contact-list p span{
+    color: #bd4063;
+}
+
+.contact-list a{
+    margin-top: 12px;
+    font-size: 17px;
+    font-weight: 100;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+.contact-list a span{
+    color: #bd4063;
+}
+
+.contact-list i{
+    color: #bd4063;
+}
+
+
