@@ -195,6 +195,7 @@ nav ul li a:hover::after{
 
 .project-list div{
     background: #292829;
+    text-align: justify;
     padding: 40px;
     font-size: 13px;
     font-weight: 300;
